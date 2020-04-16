@@ -1,9 +1,8 @@
-﻿using System;
-
-namespace MongoDb
+﻿namespace Jaroszek.ProofOfConcept.MongoDb
 {
+    using System;
     using System.Collections.Generic;
-    using MongoDb.Model;
+    using Jaroszek.ProofOfConcept.MongoDb.Model;
     using MongoDB.Driver;
 
     class Program

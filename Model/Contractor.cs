@@ -1,4 +1,4 @@
-﻿namespace MongoDb.Model
+﻿namespace Jaroszek.ProofOfConcept.MongoDb.Model
 {
     using MongoDB.Bson;
     using MongoDB.Bson.Serialization.Attributes;
