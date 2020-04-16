@@ -23,3 +23,5 @@ C:\Projects\MongoDb\obj\Debug\MongoDb.csproj.CoreCompileInputs.cache
 C:\Projects\MongoDb\obj\Debug\MongoDb.csproj.CopyComplete
 C:\Projects\MongoDb\obj\Debug\MongoDb.exe
 C:\Projects\MongoDb\obj\Debug\MongoDb.pdb
+C:\Projects\MongoDb\bin\Debug\MongoDB.Driver.Legacy.dll
+C:\Projects\MongoDb\bin\Debug\MongoDB.Driver.Legacy.xml

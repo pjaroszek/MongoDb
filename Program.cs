@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using Jaroszek.ProofOfConcept.MongoDb.Model;
     using MongoDB.Driver;
 
@@ -17,12 +18,10 @@
 
             collection = database.GetCollection<Contractor>("CancerForm");
 
-
-
             Contractor items = new Contractor();
-            items.Name = "Gambol";
-            items.Surname = "Jaroszek";
-            items.Address = "Netowisko";
+            items.Name = "xxxx";
+            items.Surname = "xxxx";
+            items.Address = "xxxx";
 
             List<Contractor> item = new List<Contractor>();
 
@@ -39,7 +38,7 @@
             }
 
 
-            var res = GetByName("Pawel");
+            var res = GetByName("Pawxxxel");
 
             foreach (var result in res)
             {
@@ -49,16 +48,20 @@
 
             Console.ReadKey();
 
-            //    Update("Pawel", "");
+            Console.WriteLine($"-- update !!!!");
 
-            DeleteItem("Gambol");
+            var itemUpdate = new Contractor();
+            itemUpdate.Id = res.First().Id;
+            itemUpdate.Name = "xxx";
+            itemUpdate.Surname = "xxxx";
+            itemUpdate.Address = "xxxxx";
+
+
+            Update(itemUpdate);
 
             Console.ReadKey();
 
         }
-
-
-        //5e949b4d43ed503e6c7b08e8
 
         public static void AddNew(List<Contractor> items)
         {
@@ -94,7 +97,6 @@
 
         }
 
-
         public static void Update(Contractor item)
         {
 
@@ -107,7 +109,5 @@
             collection.UpdateOne(filter, update);
         }
 
-
     }
-
 }
