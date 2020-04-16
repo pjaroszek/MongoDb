@@ -78,10 +78,10 @@
             return collection.Find(filter).ToList();
         }
 
-        public static void Update(string name, string surname)
+        public static void Update(Guid id, string surname)
         {
 
-            var filter = Builders<Contractor>.Filter.Eq(nameof(Contractor.Name), name);
+            var filter = Builders<Contractor>.Filter.Eq(nameof(Contractor.Id), id);
             var update = Builders<Contractor>.Update.Set(nameof(Contractor.Surname), surname);
 
             collection.UpdateOne(filter, update);
@@ -98,14 +98,13 @@
         public static void Update(Contractor item)
         {
 
-            //    var filter = Builders<Contractor>.Filter.Eq(nameof(item.Id), item.Id);
-            //   collection.UpdateMany()
+            var filter = Builders<Contractor>.Filter.Eq(nameof(item.Id), item.Id);
+            var update = Builders<Contractor>.Update
+                .Set(nameof(Contractor.Address), item.Address)
+                .Set(nameof(Contractor.Name), item.Name)
+                .Set(nameof(Contractor.Surname), item.Surname);
 
-
-
-            //    UpdateDefinition<Contractor> update = item;
-
-            //   collection.UpdateOne(filter, update);
+            collection.UpdateOne(filter, update);
         }
 
 
